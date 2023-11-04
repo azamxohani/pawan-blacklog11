@@ -15,10 +15,9 @@ router.post("/addGyro", async (req, res) => {
 })
 
 // GET REQ
-router.get("/fetchGyro", async (req, res) => {
+router.get("/health-check", async (req, res) => {
     try {
-        const data = await gyroModel.find();
-        res.status(200).json({ data });
+        res.status(200).json({ "message": "health check done" });
     } catch (error) {
         console.log(error);
     }
